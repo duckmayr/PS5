@@ -11,5 +11,5 @@
 #' @return A numeric vector of length n whose values are the MEAP for each
 #'   forecasting model used to construct P
 meape <- function(y, P){
-  return(apply(apply(abs(P - y), 2, function(x) (x/y) * 100), 2, median))
+  return(apply(abs(P - y), 2, function(x) median((x/y) * 100)))
 }
