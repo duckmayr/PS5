@@ -1,0 +1,14 @@
+Package: fitStatR
+Title: Calculate Fit Statistics for Statistical Models in R
+Version: 0.1
+Author: JB Duck-Mayr
+Maintainer: JB Duck-Mayr <j.duck-mayr@wustl.edu>
+Description: This package provides functions to calculate RMSE, MAD, RMSLE,
+    MEAPE, and MRAE.
+Depends:
+    R (>= 3.0.0)
+License: GPL (>= 2)
+Suggests:
+    devtools
+Collate:
+RoxygenNote: 6.0.1
