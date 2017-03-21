@@ -1,15 +1,18 @@
-#' Calculate Median Absolute Deviation (MAD)
+#' Calculate Median Relative Absolute Error (MRAE)
 #' 
-#' \code{mad} calculates MAD for statistical models.
+#' \code{rmsle} calculates MRAE for statistical models.
 #' 
 #' @param y A numeric vector of length n (the number of observations) giving
 #'   the observed outcomes
 #' @param P A numeric matrix of n nows and m (the number of forecasting models)
 #'   columns, where each entry i,j is the predicted value of observation i
 #'   from forecasting model j
+#' @param r A numeric vector of naive forecasts
 #' 
-#' @return A numeric vector of length n whose values are the MAD for each
+#' @return A numeric vector of length n whose values are the MRAE for each
 #'   forecasting model used to construct P
-mad <- function(y, P){
-  return(apply(abs(P - y), 2, median))
+rmsle <- function(y, P){
+  e <- abs(P - y)
+  b <- abs(r - y)
+  return(apply(e, 2, function(x) med(x / b)))
 }
