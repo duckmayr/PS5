@@ -10,6 +10,6 @@
 #' 
 #' @return A numeric vector of length n whose values are the MAD for each
 #'   forecasting model used to construct P
-mad <- function(y, P){
+mad <- function(y, P, ...){
   return(apply(abs(P - y), 2, median))
 }

@@ -1,6 +1,6 @@
 #' Calculate Median Relative Absolute Error (MRAE)
 #' 
-#' \code{rmsle} calculates MRAE for statistical models.
+#' \code{mrae} calculates MRAE for statistical models.
 #' 
 #' @param y A numeric vector of length n (the number of observations) giving
 #'   the observed outcomes
@@ -11,8 +11,8 @@
 #' 
 #' @return A numeric vector of length n whose values are the MRAE for each
 #'   forecasting model used to construct P
-rmsle <- function(y, P){
+mrae <- function(y, P, r){
   e <- abs(P - y)
   b <- abs(r - y)
-  return(apply(e, 2, function(x) med(x / b)))
+  return(apply(e, 2, function(x) median(x / b)))
 }

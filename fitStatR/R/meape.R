@@ -10,6 +10,6 @@
 #' 
 #' @return A numeric vector of length n whose values are the MEAPE for each
 #'   forecasting model used to construct P
-meape <- function(y, P){
+meape <- function(y, P, ...){
   return(apply(abs(P - y), 2, function(x) median((x/y) * 100)))
 }

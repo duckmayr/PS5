@@ -10,6 +10,6 @@
 #' 
 #' @return A numeric vector of length n whose values are the MAPE for each
 #'   forecasting model used to construct P
-mape <- function(y, P){
+mape <- function(y, P, ...){
   return(apply(abs(P - y), 2, function(x) mean((x/y) * 100)))
 }

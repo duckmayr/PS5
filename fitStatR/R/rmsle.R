@@ -10,6 +10,6 @@
 #' 
 #' @return A numeric vector of length n whose values are the RMSLE for each
 #'   forecasting model used to construct P
-rmsle <- function(y, P){
+rmsle <- function(y, P, ...){
   return(apply((log(P + 1) - log(y + 1))^2, 2, function(x) sqrt(mean(x))))
 }
