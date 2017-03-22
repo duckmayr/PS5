@@ -1,7 +1,7 @@
 # setwd as appropriate
 ## Read in the data:
 library(foreign)
-anes2 <- read.dta('anes_timeseries_2012_stata12.dta')
+anes <- read.dta('anes_timeseries_2012_stata12.dta')
 ## Deal with missingness:
 # I plan to listwise delete. Although this is not generally advisable, it will
 # not affect the purpose of this exercise.
@@ -14,7 +14,7 @@ anes <- as.data.frame(lapply(anes, codeNAsForANES))
 financeQs <- c(141, 144, 147)
 trustQs <- 304:307
 usWorldQs <- 226:227
-anes2 <- anes2[ , c(125, financeQs, trustQs, usWorldQs)]
+anes <- anes[ , c(125, financeQs, trustQs, usWorldQs)]
 ## It will be helpful to recode the variables a little:
 recodeANESvalues <- function(x){
   x <- as.factor(as.character(x))
