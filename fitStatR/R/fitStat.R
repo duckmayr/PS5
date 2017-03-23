@@ -16,6 +16,25 @@
 #' 
 #' @return A numeric matrix with m rows where each i,j entry is the relevant
 #'   fit statistic for forecasting model i
+#'
+#' @examples
+#' y <- 0:2
+#' P <- matrix(c(1:3, 3:1, rep(2, 3)), nrow=3)
+#' r <- rnorm(3)
+#' fitStat(y, P) # warning about zero value(s) in y
+#' fitStat(y, P, r) # warning about zero value(s) in y
+#' y <- 1:3
+#' fitStat(y, P)
+#' fitStat(y, P, r)
+#' fitStat(y, P, stat='rmse') # if you only want one of the fit statistics
+#' fitStat(y, P, stat=c('rmse', 'rmsle')) # if you want some but not all
+#' y <- c(NA, 2, 3)
+#' fitStat(y, P) # warning about NA value(s) in y
+#' fitStat(y, P, r) # warning about NA value(s) in y
+#' y <- c(0, NA, 2)
+#' fitStat(y, P) # warning about zero and NA value(s) in y
+#' fitStat(y, P, r) # warning about zero and NA value(s) in y
+#' 
 #' @export
 fitStat <- function(y, P, r=NULL, stat=c('rmse','mad','rmsle','mape','meape')){
   if (any(is.na(c(y, P, r)))) {
