@@ -13,6 +13,8 @@ the observed outcomes}
 \item{P}{A numeric matrix of n nows and m (the number of forecasting models)
 columns, where each entry i,j is the predicted value of observation i
 from forecasting model j}
+
+\item{...}{Other arguments that will not be used by this function}
 }
 \value{
 A numeric vector of length n whose values are the RMSLE for each
