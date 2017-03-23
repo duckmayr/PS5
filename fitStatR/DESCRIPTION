@@ -11,4 +11,11 @@ License: GPL (>= 2)
 Suggests:
     devtools
 Collate:
+    'mad.R'
+    'mape.R'
+    'meape.R'
+    'mrae.R'
+    'rmse.R'
+    'rmsle.R'
+    'fitStat.R'
 RoxygenNote: 6.0.1
