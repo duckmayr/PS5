@@ -11,6 +11,7 @@ License: GPL (>= 2)
 Suggests:
     devtools
 Collate:
+    'fitStatR-package.R'
     'mad.R'
     'mape.R'
     'meape.R'
