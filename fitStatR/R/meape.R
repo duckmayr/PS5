@@ -7,6 +7,7 @@
 #' @param P A numeric matrix of n nows and m (the number of forecasting models)
 #'   columns, where each entry i,j is the predicted value of observation i
 #'   from forecasting model j
+#' @param ... Other arguments that will not be used by this function
 #' 
 #' @return A numeric vector of length n whose values are the MEAPE for each
 #'   forecasting model used to construct P
