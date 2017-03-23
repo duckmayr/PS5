@@ -10,6 +10,7 @@
 #' 
 #' @return A numeric vector of length n whose values are the RMSE for each
 #'   forecasting model used to construct P
+#' @export
 rmse <- function(y, P, ...){
   return(apply(abs(P - y), 2, function(x) sqrt(sum(x^2)/length(y))))
 }

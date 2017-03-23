@@ -11,6 +11,7 @@
 #' 
 #' @return A numeric vector of length n whose values are the MRAE for each
 #'   forecasting model used to construct P
+#' @export
 mrae <- function(y, P, r){
   e <- abs(P - y)
   b <- abs(r - y)

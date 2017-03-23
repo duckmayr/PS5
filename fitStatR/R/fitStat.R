@@ -16,6 +16,7 @@
 #' 
 #' @return A numeric matrix with m rows where each i,j entry is the relevant
 #'   fit statistic for forecasting model i
+#' @export
 fitStat <- function(y, P, r=NULL, stat=c('rmse','mad','rmsle','mape','meape')){
   if (any(is.na(c(y, P, r)))) {
     indices <- which(sapply(c(y, P, r), is.na)) %% length(y)
